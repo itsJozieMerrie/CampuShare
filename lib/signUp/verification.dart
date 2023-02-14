@@ -282,6 +282,12 @@ class MyVerif extends StatelessWidget{
                           MaterialPageRoute(builder : (context) => const MyVerified()),
                         );
                       }
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "Verification code is incorrect"),
+                          ),
+                        );
                     }
 
                     print(joinCode);

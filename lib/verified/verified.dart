@@ -24,7 +24,7 @@ class MyVerified extends StatelessWidget{
 
                 //Email Text
                 const SizedBox(height  : 109.43 ),
-                 Text(
+                Text(
                   'Email Address Verfied',
                   style : GoogleFonts.poppins(
                     fontSize : 24, 
@@ -36,9 +36,9 @@ class MyVerified extends StatelessWidget{
                 const SizedBox(height : 16),
                 
                 Container(
-                  margin : const EdgeInsets.fromLTRB(47, 0 , 62, 0  ),
+                margin : const EdgeInsets.fromLTRB(47, 0 , 62, 0  ),
                   child: Text(
-                    'Congratulations, your phone number has been verified. You can start using the app',
+                    'Congratulations, your account has been verified. You can start using the app',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       fontSize: 16,
@@ -46,10 +46,7 @@ class MyVerified extends StatelessWidget{
                       color: Colors.grey[600],
                     )
                   ),
-                  
-                  ),
-                  
-
+                ),
 
                   //Continue Button
                   const SizedBox(height : 109),
@@ -78,13 +75,6 @@ class MyVerified extends StatelessWidget{
                       ),
                     ),
                   )
-                    
-                  
-
-            
-
-
-
               ],
             ),
           ),
