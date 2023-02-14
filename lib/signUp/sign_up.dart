@@ -134,7 +134,7 @@ class _SignUpState extends State<SignUp> {
                           else if(isChecked){
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => const MyVerif()),
+                                builder: (context) => MyVerif()),
                             );
                           }
                           print(userNameController.text);

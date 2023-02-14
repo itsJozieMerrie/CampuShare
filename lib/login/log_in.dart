@@ -5,6 +5,7 @@ import 'package:proj3/components/input_box.dart';
 import 'package:proj3/components/logo.dart';
 import 'package:proj3/components/showDialog.dart';
 import 'package:proj3/signUp/sign_up.dart';
+import 'package:proj3/homepage/homepage.dart';
 
 
 class Mylogin extends StatelessWidget{
@@ -76,6 +77,18 @@ class Mylogin extends StatelessWidget{
                             }
                           );
                         }
+                        if((userEmailController.text != '' ) || 
+                        (passwordController.text != '')){
+                          
+                          if((userEmailController.text == "neil@gmail.com") && (passwordController.text == "12345")){
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder : (context) => const Myhomepage()),
+                            );
+                          }
+                          print('Incorrect Password or Email');
+                        }
+                        print(userEmailController.text);
+                        print(passwordController.text);
                       },
                       child : const MyButton(
                         buttonName : 'Log In',
@@ -158,8 +171,8 @@ class Mylogin extends StatelessWidget{
                         
                         GestureDetector(
                           onTap : () {
-                            Navigator.pop(context);
-                          },
+                              Navigator.pop(context);
+                            },
 
                           child : Text(
                             ' Sign up',

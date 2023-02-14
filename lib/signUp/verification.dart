@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
+import 'package:proj3/verified/verified.dart';
 
 class MyVerif extends StatelessWidget{
-  const MyVerif({super.key});
+  MyVerif({super.key});
+
+  final code1 = TextEditingController();
+  final code2 = TextEditingController();
+  final code3 = TextEditingController();
+  final code4 = TextEditingController();
+  final code5 = TextEditingController();
 
   @override
   Widget build(BuildContext context){
@@ -45,7 +52,7 @@ class MyVerif extends StatelessWidget{
                                 FocusScope.of(context).nextFocus();
                               } 
                             },
-                            onSaved : (pin1) {},
+                            controller : code1,
                             textAlign : TextAlign.center,
                             inputFormatters: [
                               LengthLimitingTextInputFormatter(1),
@@ -84,7 +91,7 @@ class MyVerif extends StatelessWidget{
                                 FocusScope.of(context).nextFocus();
                               } 
                             },
-                            onSaved : (pin2) {},
+                            controller : code2,
                             textAlign : TextAlign.center,
                             inputFormatters: [
                               LengthLimitingTextInputFormatter(1),
@@ -124,7 +131,7 @@ class MyVerif extends StatelessWidget{
                                 FocusScope.of(context).nextFocus();
                               } 
                             },
-                            onSaved : (pin3) {},
+                            controller : code3,
                             textAlign : TextAlign.center,
                             inputFormatters: [
                               LengthLimitingTextInputFormatter(1),
@@ -162,7 +169,7 @@ class MyVerif extends StatelessWidget{
                                 FocusScope.of(context).nextFocus();
                               } 
                             },
-                            onSaved : (pin4) {},
+                            controller : code4,
                             textAlign : TextAlign.center,
                             inputFormatters: [
                               LengthLimitingTextInputFormatter(1),
@@ -201,7 +208,7 @@ class MyVerif extends StatelessWidget{
                                 FocusScope.of(context).nextFocus();
                               } 
                             },
-                            onSaved : (pin5) {},
+                            controller : code5,
                             textAlign : TextAlign.center,
                             inputFormatters: [
                               LengthLimitingTextInputFormatter(1),
@@ -264,6 +271,21 @@ class MyVerif extends StatelessWidget{
                 ),
                 //Next Section
                 GestureDetector(
+                  onTap : (){
+                    final joinCode = (code1.text + code2.text + code3.text + code4.text + code5.text);
+                    if(joinCode == ''){
+
+                    }
+                    else if(joinCode != ""){
+                      if(joinCode == '12345'){
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder : (context) => const MyVerified()),
+                        );
+                      }
+                    }
+
+                    print(joinCode);
+                  },
                   child: Container(
                     margin : const EdgeInsets.only(left : 44, right: 45, bottom : 18),
                     padding : const EdgeInsets.only(top : 17, bottom : 17),
@@ -280,7 +302,7 @@ class MyVerif extends StatelessWidget{
                         ),
                       ),
                   ),
-                )
+                ),
               ],
             ),
           ),
