@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:proj3/components/input_box.dart';
 
 class Myhomepage extends StatefulWidget {
 
@@ -8,11 +9,16 @@ class Myhomepage extends StatefulWidget {
     super.key,
   });
 
+  
   @override
   State<Myhomepage> createState() => _MyhomepageState();
+
+  
 }
 
 class _MyhomepageState extends State<Myhomepage> {
+  final searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -41,14 +47,14 @@ class _MyhomepageState extends State<Myhomepage> {
                       ],
                     ),
                   ),
+                 
                   //header
+
                   Center(
                     child: Padding(
-                      padding : const EdgeInsets.fromLTRB(0, 52, 0, 67),
+                      padding : const EdgeInsets.fromLTRB(0, 52, 0, 46),
                       child: Column(
                         children: [
-                          
-                          
                           Text(
                             "Lend, borrow, repeat",
                             style : GoogleFonts.poppins(
@@ -68,6 +74,25 @@ class _MyhomepageState extends State<Myhomepage> {
                             )
                           ),
                         ],
+                      ),
+                    ),
+                  ),
+
+                  //search bar
+                  Center(
+                    child : Padding(
+                      padding : const EdgeInsets.fromLTRB(45, 133, 45, 0),
+                      child : Positioned(
+                        left : 45.5,
+                        top : 158,
+                        child :InputBox(
+                          controller: searchController, 
+                          hintText: "Search for everthing", 
+                          obscureText: false,
+                         // decoration : InputDecoration(
+                          //  borderSide : BorderSide()
+                          //),
+                        ),
                       ),
                     ),
                   ),

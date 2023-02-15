@@ -274,7 +274,12 @@ class MyVerif extends StatelessWidget{
                   onTap : (){
                     final joinCode = (code1.text + code2.text + code3.text + code4.text + code5.text);
                     if(joinCode == ''){
-
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "No Code inputted. Please Re-Enter"),
+                        ),
+                      );
                     }
                     else if(joinCode != ""){
                       if(joinCode == '12345'){
@@ -282,14 +287,16 @@ class MyVerif extends StatelessWidget{
                           MaterialPageRoute(builder : (context) => const MyVerified()),
                         );
                       }
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            "Verification code is incorrect"),
+                      else if(joinCode != "12345"){
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text(
+                              "Verification code is incorrect"),
                           ),
                         );
+                      }
                     }
-
+                   
                     print(joinCode);
                   },
                   child: Container(

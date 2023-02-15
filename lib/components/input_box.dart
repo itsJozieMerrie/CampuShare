@@ -4,11 +4,13 @@ class InputBox extends StatelessWidget{
   final controller;
   final String hintText;
   final bool obscureText;
+  final decoration;
   const InputBox({
       super.key,
       required this.controller,
       required this.hintText,
       required this.obscureText,
+      this.decoration
     });
 
 
