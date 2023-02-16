@@ -49,7 +49,6 @@ class _MyhomepageState extends State<Myhomepage> {
                   ),
                  
                   //header
-
                   Center(
                     child: Padding(
                       padding : const EdgeInsets.fromLTRB(0, 52, 0, 46),

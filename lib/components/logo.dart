@@ -3,10 +3,11 @@ import 'package:flutter_svg/svg.dart';
 
 class MyLogo extends StatelessWidget {
   final String image;
-
+  final logoName;
   const MyLogo({
       super.key,
       required this.image,
+      this.logoName,
     });
 
   @override

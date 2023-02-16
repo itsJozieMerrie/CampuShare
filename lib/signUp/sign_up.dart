@@ -26,9 +26,7 @@ class _SignUpState extends State<SignUp> {
   
   //text editing
   final userNameController = TextEditingController();
-
   final userEmailController = TextEditingController();
-
   final passwordController = TextEditingController();
 
   @override
@@ -190,22 +188,46 @@ class _SignUpState extends State<SignUp> {
                     //logo
                     Row(
                       mainAxisAlignment : MainAxisAlignment.center,
-                      children : const[
-
+                      children : [
+                  
                         //facebook logo
-                        MyLogo(image : 'lib/svg/facebook.svg'),
+                        InkWell(
+                          child : const MyLogo(
+                            image : 'lib/svg/facebook.svg',
+                          ),
+                          onTap : (){
+                            print('Facebook Logo');
+                          },
+                        ),
+                       
                         
-                        SizedBox(width : 16),
-
+                        const SizedBox(width : 16),
+                  
                         //google logo
-                        MyLogo(image: 'lib/svg/Google.svg'),
-
-                        SizedBox(width : 16),
+                        InkWell(
+                          child : const MyLogo(
+                            image: 'lib/svg/Google.svg',
+                          ),
+                          onTap : (){
+                            print('Google Logo');
+                          }
+                        ),
+                        
+                  
+                        const SizedBox(width : 16),
                           
                         //Apple logo
-                        MyLogo(image: 'lib/svg/Apple.svg'),
+                        InkWell(
+                          child : const MyLogo(
+                            image: 'lib/svg/Apple.svg',
+                          ),
+                          onTap : (){
+                            print('Apple Logo');
+                          }
+                        ),
                       ],
                     ),
+                    
                     
                     const SizedBox(height : 32),
                     //already have an account
