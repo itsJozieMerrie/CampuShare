@@ -10,14 +10,14 @@ class MyLandingPage extends StatelessWidget{
   Widget build(BuildContext context){
     return  SafeArea(
             child: Scaffold(
-              backgroundColor : const Color(0xff6C63FF),
+              backgroundColor : Colors.white,
               //content inside
               body : SingleChildScrollView(
                   child : Center(
                     child: Column(
                       children: [
 
-                        const SizedBox(height : 70),
+                        const SizedBox(height : 100),
                         SvgPicture.asset(
                           'lib/svg/Group.svg',
                           width : 289,
@@ -37,7 +37,7 @@ class MyLandingPage extends StatelessWidget{
                                   'Welcome to',
                                   style : GoogleFonts.inter(
                                     fontSize : 32,
-                                    color : Colors.white,
+                                    color : Colors.black,
                                   ),
                                 ),
                               ],
@@ -48,29 +48,43 @@ class MyLandingPage extends StatelessWidget{
                         Padding(
                           padding: const EdgeInsets.only(top : 0,  left : 35),
                           child: Row(
-                              children: [
-                                Text(
-                                  'Campu',
-                                  style : GoogleFonts.inter(
-                                    fontSize : 40,
-                                    fontWeight : FontWeight.w800,
-                                    color : Colors.white,
-                                  ),
+                            children: [
+                              Text(
+                                'Campu',
+                                style : GoogleFonts.inter(
+                                  fontSize : 40,
+                                  fontWeight : FontWeight.w800,
+                                  color : Colors.black,
                                 ),
-                                Text(
-                                  'Share',
-                                  style : GoogleFonts.inter(
-                                    fontSize : 40,
-                                    fontWeight : FontWeight.w800,
-                                    color : Colors.black,
-                                  ),
+                              ),
+                              Text(
+                                'Share',
+                                style : GoogleFonts.inter(
+                                  fontSize : 40,
+                                  fontWeight : FontWeight.w800,
+                                  color : const Color(0xff6C63FF),
                                 ),
-                              ],
-                            ),
+                              ),
+
+                            ],
+                          ),
                         ),
 
+                        const SizedBox( height : 23,),
                         
-                        const SizedBox(height : 190),
+                        Padding(
+                          padding : const EdgeInsets.fromLTRB(33 , 0, 64, 0),
+                          child : Text(
+                              "Empower you campus community! Lend, borrow, repeat with ease!",
+                              style : GoogleFonts.poppins(
+                                fontSize : 15, 
+                              ),
+                            ),
+                        ),
+                        
+
+                        
+                        const SizedBox(height : 63),
 
 
 
@@ -80,7 +94,7 @@ class MyLandingPage extends StatelessWidget{
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder:(context) =>  SignUp(),
+                                builder:(context) =>  const SignUp(),
                               )
                             );
                           },

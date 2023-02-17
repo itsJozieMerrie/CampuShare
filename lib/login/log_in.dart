@@ -4,7 +4,6 @@ import 'package:proj3/components/buttons.dart';
 import 'package:proj3/components/input_box.dart';
 import 'package:proj3/components/logo.dart';
 import 'package:proj3/components/showDialog.dart';
-import 'package:proj3/signUp/sign_up.dart';
 import 'package:proj3/homepage/homepage.dart';
 
 
