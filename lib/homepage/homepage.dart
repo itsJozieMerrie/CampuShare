@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,6 +22,8 @@ class _MyhomepageState extends State<Myhomepage> {
 
   @override
   Widget build(BuildContext context){
+    final user = FirebaseAuth.instance.currentUser!;
+
     return Scaffold(
       resizeToAvoidBottomInset : false,
       body : SafeArea(
@@ -81,20 +84,50 @@ class _MyhomepageState extends State<Myhomepage> {
                   Center(
                     child : Padding(
                       padding : const EdgeInsets.fromLTRB(45, 133, 45, 0),
-                      child : Positioned(
-                        left : 45.5,
-                        top : 158,
-                        child :InputBox(
-                          controller: searchController, 
-                          hintText: "Search for everthing", 
-                          obscureText: false,
+                      child :InputBox(
+                        controller: searchController,
+                        hintText: "Search for everything",
+                        obscureText: false,
                          // decoration : InputDecoration(
                           //  borderSide : BorderSide()
                           //),
-                        ),
+
                       ),
                     ),
                   ),
+
+
+                  //just for testing, sign out feature
+                  Center(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(45, 250, 45, 0),
+                        child: Column(
+                          children: [
+                            const Text(
+                              'Signed in as',
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              user.email!,
+                              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(height: 40),
+                            ElevatedButton.icon(
+                                style: ElevatedButton.styleFrom(
+                                  minimumSize: const Size.fromHeight(50),
+                                ),
+                                icon: const Icon(Icons.arrow_back, size: 32),
+                                label: const Text(
+                                  'Sign Out',
+                                  style: TextStyle(fontSize: 24),
+                                ),
+                                onPressed: () => FirebaseAuth.instance.signOut(),
+                            )
+                          ],
+                        )
+                      )
+                  )
                 ],  
                 
               )
