@@ -1,8 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:proj3/auth_page/auth_page.dart';
 import 'package:proj3/homepage/homepage.dart';
 import 'package:proj3/login/log_in.dart';
 import 'package:proj3/signIn/sign_in.dart';
+
+import '../main.dart';
+import '../signUp/verify_email_page.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({Key? key}) : super(key: key);
@@ -24,9 +28,9 @@ class _WrapperState extends State<Wrapper> {
         } else if (snapshot.hasError) {
           return const Center(child: Text('Something went wrong!'));
         } else if (snapshot.hasData) {
-          return const Myhomepage();
+          return const VerifyEmailPage();
         } else {
-          return const SignIn();
+          return AuthPage();
         }
       }
     )

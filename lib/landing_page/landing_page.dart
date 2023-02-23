@@ -96,7 +96,7 @@ class MyLandingPage extends StatelessWidget{
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder:(context) =>  const Wrapper(),
+                                builder:(context) => const Wrapper(),
                               )
                             );
                           },

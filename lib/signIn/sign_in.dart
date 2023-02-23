@@ -10,7 +10,12 @@ import 'package:proj3/homepage/homepage.dart';
 import '../main.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+  final VoidCallback onClickedSignUp;
+
+  const SignIn({
+    Key? key,
+    required this.onClickedSignUp,
+  }) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -37,7 +42,7 @@ class _SignInState extends State<SignIn> {
       print(e);
     }
 
-    //navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    //navigatorKey.currentState!.popUntil((route) => '/wrapper');
   }
 
   @override
@@ -219,7 +224,7 @@ class _SignInState extends State<SignIn> {
 
                       GestureDetector(
                         onTap : () {
-                          Navigator.pop(context);
+                          widget.onClickedSignUp();
                         },
 
                         child : Text(
